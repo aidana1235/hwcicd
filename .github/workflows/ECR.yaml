@@ -10,7 +10,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY_NAME: img-terraform
+  ECR_REPOSITORY_NAME: img-pipeline
 
 jobs:
   provision-ecr:
