@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_ecr_repository" "test" {
-  name = "image-pipeline"
+  name = "img-pipeline"
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
     scan_on_push = true

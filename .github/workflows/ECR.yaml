@@ -10,7 +10,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY_NAME: image-pipeline
+  ECR_REPOSITORY_NAME: img-terraform
 
 jobs:
   provision-ecr:
@@ -29,5 +29,4 @@ jobs:
 
       - name: Create ECR Repository
         run: |
-          aws ecr create-repository --repository-name $ECR_REPOSITORY_NAME --image-tag-mutability MUTABLE --region $AWS_REGION 
-          --image-scanning-configuration scanOnPush=true
+          aws ecr create-repository --repository-name $ECR_REPOSITORY_NAME --image-tag-mutability MUTABLE --region $AWS_REGION --image-scanning-configuration scanOnPush=true
