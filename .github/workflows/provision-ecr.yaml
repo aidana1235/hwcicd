@@ -35,4 +35,4 @@ jobs:
         run: |
           # Add commands to provision EC2 here
           # Example: Using AWS CLI to launch an EC2 instance with default settings
-          aws ec2 run-instances --image-id ami-0715c1897453cabd1 --instance-type t2.micro --region $AWS_REGION
+          aws ec2 run-instances --image-id ami-0715c1897453cabd1 --instance-type t2.nano --region $AWS_REGION
