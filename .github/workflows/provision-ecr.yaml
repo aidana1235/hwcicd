@@ -1,4 +1,4 @@
-name: Provision ECR
+name: Provision ECR and EC2
 
 on:
   push:
@@ -13,7 +13,7 @@ env:
   ECR_REPOSITORY_NAME: img-terraform
 
 jobs:
-  provision-ecr:
+  provision:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,3 +30,9 @@ jobs:
       - name: Create ECR Repository
         run: |
           aws ecr create-repository --repository-name $ECR_REPOSITORY_NAME --image-tag-mutability MUTABLE --region $AWS_REGION --image-scanning-configuration scanOnPush=true
+
+      - name: Provision EC2
+        run: |
+          # Add commands to provision EC2 here
+          # Example: Using AWS CLI to launch an EC2 instance with default settings
+          aws ec2 run-instances --image-id ami-0715c1897453cabd1 --instance-type t2.micro --region $AWS_REGION
