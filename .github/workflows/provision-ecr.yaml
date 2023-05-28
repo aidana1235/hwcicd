@@ -34,5 +34,5 @@ jobs:
       - name: Provision EC2
         run: |
           # Add commands to provision EC2 here
-          # Example: Using AWS CLI to launch an EC2 instance with default settings
-          aws ec2 run-instances --image-id ami-0715c1897453cabd1 --instance-type t2.nano --region $AWS_REGION
+          # Example: Using AWS CLI to launch an EC2 instance with default settings and name "cicd-inst"
+          aws ec2 run-instances --image-id ami-0715c1897453cabd1 --instance-type t2.nano --region $AWS_REGION --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cicd-inst}]'
